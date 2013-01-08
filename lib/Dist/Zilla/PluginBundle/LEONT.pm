@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 use Moose;
-with qw/Dist::Zilla::Role::PluginBundle::Easy/;# Dist::Zilla::Role::PluginBundle::PluginRemover Dist::Zilla::Role::PluginBundle::Config::Slicer/;
+with qw/Dist::Zilla::Role::PluginBundle::Easy Dist::Zilla::Role::PluginBundle::PluginRemover Dist::Zilla::Role::PluginBundle::Config::Slicer/;
 
 has install_tool => (
 	is      => 'ro',
