@@ -58,6 +58,7 @@ my %tools = (
 	mb   => [ 'ModuleBuild' ],
 	mbc  => [ qw/ModuleBuild::Custom Meta::Dynamic::Config/ ],
 	mbt  => [ 'ModuleBuildTiny' ],
+	self => [ 'BuildSelf' ]
 );
 
 sub configure {
