@@ -98,6 +98,9 @@ This is currently identical to the following setup:
     [MinimumPerl]
     [Git::NextVersion]
     
+    [NextRelease]
+    [CheckChangesHasContent]
+
     ($install_tool dependent modules)
 
     [PodWeaver]
@@ -105,14 +108,11 @@ This is currently identical to the following setup:
     
     [PodSyntaxTests]
     [PodCoverageTests]
-    [Test::Kwalitee]
     [Test::Compile]
     
-    [NextRelease]
-    [CheckChangesHasContent]
     [@Git]
 
-The install_tool parameter can currently have 4 different values:
+The install_tool parameter can currently have 5 different values:
 
 =over 4
 
@@ -131,6 +131,10 @@ Use Module::Build with the ModuleBuild::Custom plugin
 =item * mbt
 
 Use Module::Build::Tiny
+
+=item * self
+
+Use the installing module to bootstrap itself
 
 =back
 
