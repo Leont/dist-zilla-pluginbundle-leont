@@ -1,6 +1,7 @@
 Revision history for Dist-Zilla-PluginBundle-LEONT
 
 {{$NEXT}}
+          Embrace Module::Build::Tiny
 
 0.008     2013-01-30 17:23:40 Europe/Amsterdam
           Reordered plugins so that BuildSelf can work
