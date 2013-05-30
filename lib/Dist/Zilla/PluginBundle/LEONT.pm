@@ -15,7 +15,7 @@ has install_tool => (
 	},
 );
 
-my @basics = qw/
+my @plugins_early = qw/
 GatherDir
 PruneCruft
 ManifestSkip
@@ -26,12 +26,7 @@ ExtraTests
 ExecDir
 ShareDir
 Manifest
-TestRelease
-ConfirmRelease
-UploadToCPAN
-/;
 
-my @plugins_early = qw/
 AutoPrereqs
 MetaJSON
 Repository
@@ -44,8 +39,13 @@ CheckChangesHasContent
 /;
 
 # AutoPrereqs should be before installtool (for BuildSelf), InstallGuide should be after it.
+# UploadToCPAN should be after @Git
 
 my @plugins_late = qw/
+TestRelease
+ConfirmRelease
+UploadToCPAN
+
 PodWeaver
 PkgVersion
 InstallGuide
@@ -68,13 +68,12 @@ my %tools = (
 sub configure {
 	my $self = shift;
 
-	$self->add_plugins(@basics);
 	my $tool = $tools{ $self->install_tool };
 	confess 'No known tool ' . $self->install_tool if not $tool;
 	$self->add_plugins(@plugins_early);
 	$self->add_plugins(@{$tool});
-	$self->add_plugins(@plugins_late);
 	$self->add_bundle("\@$_") for @bundles;
+	$self->add_plugins(@plugins_late);
 	return;
 }
 
