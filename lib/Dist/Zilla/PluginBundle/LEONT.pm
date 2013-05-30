@@ -15,7 +15,7 @@ has install_tool => (
 	},
 );
 
-my @plugins_early = qw/
+my @plugins_early = (qw/
 GatherDir
 PruneCruft
 ManifestSkip
@@ -23,7 +23,9 @@ MetaYAML
 License
 Readme
 ExtraTests
-ExecDir
+/,
+[ ExecDir => { dir => 'script' } ],
+qw/
 ShareDir
 Manifest
 
@@ -36,7 +38,7 @@ Git::NextVersion
 
 NextRelease
 CheckChangesHasContent
-/;
+/);
 
 # AutoPrereqs should be before installtool (for BuildSelf), InstallGuide should be after it.
 # UploadToCPAN should be after @Git
