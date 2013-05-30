@@ -15,6 +15,16 @@ has install_tool => (
 	},
 );
 
+has fast => (
+	is      => 'ro',
+	isa     => 'Bool',
+	lazy    => 1,
+	default => sub {
+		my $self = shift;
+		$self->payload->{fast};
+	},
+);
+
 my @plugins_early = (qw/
 GatherDir
 PruneCruft
@@ -33,7 +43,6 @@ AutoPrereqs
 MetaJSON
 Repository
 Bugtracker
-MinimumPerl
 Git::NextVersion
 
 NextRelease
@@ -73,6 +82,7 @@ sub configure {
 	my $tool = $tools{ $self->install_tool };
 	confess 'No known tool ' . $self->install_tool if not $tool;
 	$self->add_plugins(@plugins_early);
+	$self->add_plugins($self->fast ? 'MinimumPerlFast' : 'MinimumPerl');
 	$self->add_plugins(@{$tool});
 	$self->add_bundle("\@$_") for @bundles;
 	$self->add_plugins(@plugins_late);
