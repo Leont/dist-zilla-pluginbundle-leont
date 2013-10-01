@@ -98,9 +98,22 @@ sub configure {
 
 This is currently identical to the following setup:
 
-    [@Filter]
-    -bundle = @Basic
-    -remove = MakeMaker
+    ; @Basic except for MakeMaker and ExecDir
+    [GatherDir]
+    [PruneCruft]
+    [ManifestSkip]
+    [MetaYAML]
+    [License]
+    [Readme]
+    [ExtraTests]
+    [ShareDir]
+    [Manifest]
+    [TestRelease]
+    [ConfirmRelease]
+    [UploadToCPAN]
+
+    [ExecDir]
+    dir = script
 
     [AutoPrereqs]
     [MetaJSON]
@@ -114,6 +127,8 @@ This is currently identical to the following setup:
     [CheckChangesHasContent]
 
     ($install_tool dependent modules)
+
+    [InstallGuide]
 
     [PodWeaver]
     [PkgVersion]
