@@ -2,6 +2,7 @@ Revision history for Dist-Zilla-PluginBundle-LEONT
 
 {{$NEXT}}
           Force scripts to be in script/
+          Added MetaProvides
           Optionally use MinimumPerlFast
           Added optional plugins to recommended
 

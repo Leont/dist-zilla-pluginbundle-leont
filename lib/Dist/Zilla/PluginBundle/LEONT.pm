@@ -44,6 +44,7 @@ MetaJSON
 Repository
 Bugtracker
 Git::NextVersion
+MetaProvides::Package
 
 NextRelease
 CheckChangesHasContent
