@@ -71,6 +71,7 @@ my @bundles = qw/Git/;
 
 my %tools = (
 	eumm => [ 'MakeMaker' ],
+	eumc => [ 'MakeMaker::Custom' ],
 	mb   => [ 'ModuleBuild' ],
 	mbc  => [ qw/ModuleBuild::Custom Meta::Dynamic::Config/ ],
 	mbt  => [ 'ModuleBuildTiny' ],
