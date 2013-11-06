@@ -1,6 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-LEONT
 
 {{$NEXT}}
+
+0.011     2013-11-07 00:09:55 Europe/Amsterdam
           Added MakeMaker::Custom as an option to install_tool options
 
 0.010     2013-10-01 13:57:38 Europe/Amsterdam
