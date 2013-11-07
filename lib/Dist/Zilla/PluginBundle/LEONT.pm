@@ -60,7 +60,6 @@ UploadToCPAN
 
 PodWeaver
 PkgVersion
-InstallGuide
 
 PodSyntaxTests
 PodCoverageTests
@@ -71,11 +70,11 @@ my @bundles = qw/Git/;
 
 my %tools = (
 	eumm => [ 'MakeMaker' ],
-	eumc => [ 'MakeMaker::Custom' ],
 	mb   => [ 'ModuleBuild' ],
 	mbc  => [ qw/ModuleBuild::Custom Meta::Dynamic::Config/ ],
 	mbt  => [ 'ModuleBuildTiny' ],
-	self => [ 'BuildSelf' ]
+	self => [ 'BuildSelf' ],
+	none => [],
 );
 
 sub configure {
@@ -88,6 +87,7 @@ sub configure {
 	$self->add_plugins(@{$tool});
 	$self->add_bundle("\@$_") for @bundles;
 	$self->add_plugins(@plugins_late);
+	$self->add_plugins('InstallGuide') if @{$tool};
 	return;
 }
 
