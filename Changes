@@ -1,6 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-LEONT
 
 {{$NEXT}}
+
+0.012     2013-11-07 14:40:54 Europe/Amsterdam
           Replaced MakeMaker::Custom option by none
 
 0.011     2013-11-07 00:09:55 Europe/Amsterdam
