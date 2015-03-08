@@ -33,7 +33,6 @@ ManifestSkip
 MetaYAML
 License
 Readme
-ExtraTests
 /,
 [ ExecDir => { dir => 'script' } ],
 qw/
@@ -55,7 +54,7 @@ CheckChangesHasContent
 # UploadToCPAN should be after @Git
 
 my @plugins_late = qw/
-TestRelease
+RunExtraTests
 ConfirmRelease
 UploadToCPAN
 
@@ -100,23 +99,22 @@ sub configure {
 
 This is currently identical to the following setup:
 
-    ; @Basic except for MakeMaker and ExecDir
+    ; @Basic except for MakeMaker, ExecDir, TestRelease and ExtraTests
     [GatherDir]
     [PruneCruft]
     [ManifestSkip]
     [MetaYAML]
     [License]
     [Readme]
-    [ExtraTests]
     [ShareDir]
     [Manifest]
-    [TestRelease]
     [ConfirmRelease]
     [UploadToCPAN]
 
     [ExecDir]
     dir = script
 
+    [RunExtraTests]
     [AutoPrereqs]
     [MetaJSON]
     [MetaResources]
