@@ -117,10 +117,9 @@ This is currently identical to the following setup:
     [RunExtraTests]
     [AutoPrereqs]
     [MetaJSON]
-    [MetaResources]
     [Repository]
     [Bugtracker]
-    [MinimumPerl]
+    [MinimumPerl] ; [MinimumPerlFast] if fast=true
     [Git::NextVersion]
     
     [NextRelease]
@@ -139,7 +138,11 @@ This is currently identical to the following setup:
     
     [@Git]
 
-The install_tool parameter can currently have 5 different values:
+=head2 Parameters
+
+=head2 install_tool
+
+This parameter can currently have 5 different values:
 
 =over 4
 
@@ -163,7 +166,19 @@ Use Module::Build::Tiny
 
 Use the installing module to bootstrap itself
 
+=item * none
+
+Don't let this bundle add an install tool, this will need to be set manually. This also disables C<[InstallGuide]>.
+
 =back
+
+=head3 fast
+
+This picks some alternative modules. Currently it replaces MinimumPerl by MinimumPerlFast.
+
+=head3 tracker
+
+This picks which bugtracker to use, options are C<github> and C<rt>.
 
 =begin Pod::Coverage
 
