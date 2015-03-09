@@ -48,6 +48,7 @@ MetaProvides::Package
 
 NextRelease
 CheckChangesHasContent
+Git::Contributors
 /);
 
 # AutoPrereqs should be before installtool (for BuildSelf), InstallGuide should be after it.
@@ -137,6 +138,7 @@ This is currently identical to the following setup:
     [Test::Compile]
     
     [@Git]
+    [Git::Contributors]
 
 =head2 Parameters
 
