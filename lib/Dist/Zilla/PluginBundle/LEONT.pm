@@ -193,11 +193,5 @@ This picks some alternative modules. Currently it replaces MinimumPerl by Minimu
 
 This picks which bugtracker to use, options are C<github> and C<rt>.
 
-=begin Pod::Coverage
-
-configure
-
-=end Pod::Coverage
-
 =cut
 
