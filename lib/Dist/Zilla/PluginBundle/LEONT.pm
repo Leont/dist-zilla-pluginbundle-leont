@@ -54,7 +54,7 @@ Git::Contributors
 # AutoPrereqs should be before installtool (for BuildSelf), InstallGuide should be after it.
 # UploadToCPAN should be after @Git
 
-my @plugins_late = qw/
+my @plugins_late = (qw/
 RunExtraTests
 ConfirmRelease
 UploadToCPAN
@@ -63,9 +63,9 @@ PodWeaver
 PkgVersion
 
 PodSyntaxTests
-PodCoverageTests
-Test::Compile
-/;
+PodCoverageTests/,
+[ 'Test::Compile', { xt_mode => -d 't' } ],
+);
 
 my @bundles = qw/Git/;
 
@@ -138,6 +138,7 @@ This is currently identical to the following setup:
     [PodSyntaxTests]
     [PodCoverageTests]
     [Test::Compile]
+    xt_mode = 1 ; unless no other tests
     
     [@Git]
     [Git::Contributors]
