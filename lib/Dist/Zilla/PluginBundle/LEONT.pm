@@ -70,11 +70,13 @@ Test::Compile
 my @bundles = qw/Git/;
 
 my %tools = (
-	eumm => [ 'MakeMaker' ],
-	mb   => [ 'ModuleBuild' ],
-	mbc  => [ qw/ModuleBuild::Custom Meta::Dynamic::Config/ ],
-	mbt  => [ 'ModuleBuildTiny' ],
-	self => [ 'BuildSelf' ],
+	eumm          => [ 'MakeMaker' ],
+	mb            => [ 'ModuleBuild' ],
+	mbc           => [ qw/ModuleBuild::Custom Meta::Dynamic::Config/ ],
+	mbt           => [ 'ModuleBuildTiny' ],
+	self          => [ 'BuildSelf' ],
+	'mbt+mb'      => [ 'ModuleBuildTiny::Fallback' ],
+	'mbt+mb+eumm' => [ 'ModuleBuildTiny::Fallback', 'MakeMaker::Fallback' ],
 	none => [],
 );
 
@@ -167,6 +169,14 @@ Use Module::Build::Tiny
 =item * self
 
 Use the installing module to bootstrap itself
+
+=item * mbt+mb
+
+Use Module::Build::Tiny with a Module::Build fallback
+
+=item * mbt+mb+eumm
+
+Use Module::Build::Tiny with a Module::Build and a ExtUtils::MakeMaker fallback
 
 =item * none
 
