@@ -1,6 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-LEONT
 
 {{$NEXT}}
+
+0.013     2015-03-19 16:30:53+01:00 Europe/Amsterdam
           Switch to RunExtraTests
           Add Git::Contributors
           Add fallback install_tools
