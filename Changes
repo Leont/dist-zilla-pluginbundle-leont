@@ -5,6 +5,7 @@ Revision history for Dist-Zilla-PluginBundle-LEONT
           Add Git::Contributors
           Add fallback install_tools
           Make Test::Compile usually be an author test
+          Remove LEONT::XS and LEONT::PP
 
 0.012     2013-11-07 14:40:54 Europe/Amsterdam
           Replaced MakeMaker::Custom option by none
