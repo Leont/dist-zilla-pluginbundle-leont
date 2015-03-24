@@ -1,6 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-LEONT
 
 {{$NEXT}}
+
+0.014     2015-03-24 12:35:33+01:00 Europe/Amsterdam
           Fix release testing
 
 0.013     2015-03-19 16:30:53+01:00 Europe/Amsterdam
