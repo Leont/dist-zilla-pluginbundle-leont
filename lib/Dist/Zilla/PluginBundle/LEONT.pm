@@ -56,6 +56,7 @@ Git::Contributors
 
 my @plugins_late = (qw/
 RunExtraTests
+TestRelease
 ConfirmRelease
 UploadToCPAN
 
